@@ -1,8 +1,10 @@
 public class Member{
-    String nama;
-    tring noTelepon;
-    String tanggalDaftar;
-    String jenisPaket;
+    private String nama;
+    private String noTelepon;
+    private String tanggalDaftar;
+    private String jenisPaket;
+
+
 
     public Member(String nama, String noTelepon, String tanggalDaftar, String jenisPaket) {
         this.nama = nama;
@@ -14,4 +16,22 @@ public class Member{
     public Member(String nama, String noTelepon, String tanggalDaftar) {
         this(nama, noTelepon, tanggalDaftar, "Basic");
     }
+
+    
+    public String getNama() {
+        return this.nama;
+    }
+
+    public String getNoTelepon() {
+        return this.noTelepon;
+    }
+
+    public String getTanggalDaftar() {
+        return this.tanggalDaftar;
+    }
+
+    public String getJenisPaket() {
+        return this.jenisPaket;
+    }
+
 }
