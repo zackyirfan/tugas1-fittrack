@@ -1,3 +1,11 @@
+/**
+ * Kelas ini merepresentasikan data seorang member dalam sistem.
+ * 
+ * @author Arienal Zacky Irfan
+ * @version 1.0
+ * @since 2026
+ */
+
 public class Member{
     private String nama;
     private String noTelepon;
