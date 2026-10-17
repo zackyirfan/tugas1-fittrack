@@ -32,8 +32,7 @@ public class Member{
     public Member(String nama, String noTelepon, String tanggalDaftar) {
         this(nama, noTelepon, tanggalDaftar, "Basic");
     }
-
-    
+ 
     public String getNama() {
         return this.nama;
     }
@@ -48,6 +47,14 @@ public class Member{
 
     public String getJenisPaket() {
         return this.jenisPaket;
+    }
+
+    public void setNama(String nama) {
+        // Aturan: Nama tidak boleh kosong atau hanya berisi spasi
+        if (nama == null || nama.trim().isEmpty()) {
+            throw new IllegalArgumentException("Nama tidak boleh kosong atau hanya berisi spasi!")
+        }
+        this.nama = nama;
     }
 
 }
