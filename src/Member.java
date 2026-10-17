@@ -68,6 +68,11 @@ public class Member{
         return this.tanggalDaftar;
     }
 
+    /**
+     * Mengembalikan nilai jenis paket member
+     * 
+     * @return nilai dari atribut jenisPaket
+     */
     public String getJenisPaket() {
         return this.jenisPaket;
     }
