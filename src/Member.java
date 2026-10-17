@@ -51,7 +51,7 @@ public class Member{
     }
 
     /**
-     * Mengembalikan nilai noTelepon member
+     * Mengembalikan nilai no Telepon member
      * 
      * @return nilai dari atribut noTelepon;
      */
@@ -59,6 +59,11 @@ public class Member{
         return this.noTelepon;
     }
 
+    /**
+     * Mengembalikan nilai Tanggal daftar member
+     * 
+     * @return nilai dari atribut tanggalDaftar
+     */
     public String getTanggalDaftar() {
         return this.tanggalDaftar;
     }
@@ -71,7 +76,7 @@ public class Member{
      * Mengatur nama lengkap member dengan melakukan validasi 
      * agar tidak boleh kosong atau hanya berisi spasi
      * 
-     * @param nama naam lengkap member yang akan di-set
+     * @param nama nama lengkap member yang akan di-set
      * @throws IllegalArgumentException jika nama bernilai null, kosong,
      * atau hanya berisi spasi  
      */
