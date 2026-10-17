@@ -13,7 +13,15 @@ public class Member{
     private String jenisPaket;
 
 
-
+    /**
+     * Method constructor untuk membuat objek
+     * dari kelas member
+     * 
+     * @param nama nama lengkap member
+     * @param noTelepon nomor telepon member
+     * @param tanggalDaftar tanggal saat member mendaftar 
+     * @param jenisPaket jenis paket langganan member
+     */
     public Member(String nama, String noTelepon, String tanggalDaftar, String jenisPaket) {
         this.nama = nama;
         this.noTelepon = noTelepon;
