@@ -49,6 +49,14 @@ public class Member{
         return this.jenisPaket;
     }
 
+    /**
+     * Mengatur nama lengkap member dengan melakukan validasi 
+     * agar tidak boleh kosong atau hanya berisi spasi
+     * 
+     * @param nama naam lengkap member yang akan di-set
+     * @throws IllegalArgumentException jika nama bernilai null, kosong,
+     * atau hanya berisi spasi  
+     */
     public void setNama(String nama) {
         // Aturan: Nama tidak boleh kosong atau hanya berisi spasi
         if (nama == null || nama.trim().isEmpty()) {
