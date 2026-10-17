@@ -44,12 +44,17 @@ public class Member{
     /**
      * Mengembalikan nilai nama member
      * 
-     * @return nilai dari aribut nama
+     * @return nilai dari aribut nama 
      */
     public String getNama() {
         return this.nama;
     }
 
+    /**
+     * Mengembalikan nilai noTelepon member
+     * 
+     * @return nilai dari atribut noTelepon;
+     */
     public String getNoTelepon() {
         return this.noTelepon;
     }
