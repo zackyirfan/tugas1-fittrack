@@ -40,7 +40,12 @@ public class Member{
     public Member(String nama, String noTelepon, String tanggalDaftar) {
         this(nama, noTelepon, tanggalDaftar, "Basic");
     }
- 
+    
+    /**
+     * Mengembalikan nilai nama member
+     * 
+     * @return nilai dari aribut nama
+     */
     public String getNama() {
         return this.nama;
     }
