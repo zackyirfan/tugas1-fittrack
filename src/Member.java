@@ -29,6 +29,14 @@ public class Member{
         this.jenisPaket = jenisPaket;
     }
 
+    /**
+     * Method constructor untuk membuat objek dari kelas member
+     * dengan jenis paket default "Basic"
+     * 
+     * @param nama nama lengkap member
+     * @param noTelepon nomor telepon member
+     * @param tanggalDaftar tanggal saat member mendaftar
+     */
     public Member(String nama, String noTelepon, String tanggalDaftar) {
         this(nama, noTelepon, tanggalDaftar, "Basic");
     }
