@@ -93,4 +93,13 @@ public class Member{
         this.nama = nama;
     }
 
+    public void setNoTelepon(String noTelepon) {
+        // Aturan: nomor telepon tidak boleh lebih dari sepuluh digit
+        // dan diawali angka nol
+        if (noTelepon == null || !noTelepon.matches("^0\\d{9,}$")) { //menggunakan Regular Expression untuk constraint
+            throw new IllegalArgumentException("Nomor telepon harus diawali angka 0 dan minimal 10 digit");
+        }
+        this.noTelepon = noTelepon;
+    }
+
 }
