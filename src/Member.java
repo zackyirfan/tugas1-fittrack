@@ -35,7 +35,7 @@ public class Member{
     public Member(String nama, String noTelepon, String tanggalDaftar, String jenisPaket) {
         setNama(nama);
         setNoTelepon(noTelepon);
-        setTanggalDaftar(tanggal);
+        setTanggalDaftar(tanggalDaftar);
         setJenisPaket(jenisPaket);
     }
 
@@ -169,6 +169,13 @@ public class Member{
         }
     }
 
+    /**
+     * Mengatur jenis paket yang dipilih member 
+     * agar tidak null dan kosong
+     * 
+     * @param jenisPaket jenis paket yang dipilih member
+     * @throws IllegalArgumentException jika jenis paket kosong atau null
+     */
     public void setJenisPaket(String jenisPaket) {
         if (jenisPaket == null || jenisPaket.trim().isEmpty()) {
             throw new IllegalArgumentException("Jenis paket tidak boleh kosong!");
