@@ -12,6 +12,7 @@ public class Member{
     private String tanggalDaftar;
     private String jenisPaket;
 
+    // Constructor 1
 
     /**
      * Method constructor untuk membuat objek
@@ -29,6 +30,8 @@ public class Member{
         this.jenisPaket = jenisPaket;
     }
 
+    // Constructor 2 (Default paket "Basic")
+
     /**
      * Method constructor untuk membuat objek dari kelas member
      * dengan jenis paket default "Basic"
@@ -40,6 +43,9 @@ public class Member{
     public Member(String nama, String noTelepon, String tanggalDaftar) {
         this(nama, noTelepon, tanggalDaftar, "Basic");
     }
+
+
+    // --- GETTER ---
     
     /**
      * Mengembalikan nilai nama member
@@ -77,6 +83,9 @@ public class Member{
         return this.jenisPaket;
     }
 
+
+    // --- SETTER DENGAN VALIDASI --
+
     /**
      * Mengatur nama lengkap member dengan melakukan validasi 
      * agar tidak boleh kosong atau hanya berisi spasi
@@ -88,7 +97,7 @@ public class Member{
     public void setNama(String nama) {
         // Aturan: Nama tidak boleh kosong atau hanya berisi spasi
         if (nama == null || nama.trim().isEmpty()) {
-            throw new IllegalArgumentException("Nama tidak boleh kosong atau hanya berisi spasi!")
+            throw new IllegalArgumentException("Nama tidak boleh kosong atau hanya berisi spasi!");
         }
         this.nama = nama;
     }
@@ -108,6 +117,13 @@ public class Member{
             throw new IllegalArgumentException("Nomor telepon harus diawali angka 0 dan minimal 10 digit");
         }
         this.noTelepon = noTelepon;
+    }
+
+    public void setTanggalDaftar(String tanggalDaftar) {
+        if (tanggalDaftar == null || tanggalDaftar.trim.isEmpty()) {
+            throw new IllegalArgumentException("Tanggal daftar tidak boleh kosong!");
+        }
+        this.jenisPaket = jenisPaket;
     }
 
 }
