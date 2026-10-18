@@ -128,13 +128,32 @@ public class Member{
         this.noTelepon = noTelepon;
     }
 
-
+    /**
+     * Mengatur tanggal daftar member dengan memanggil fungsi validasi dan parsing terpisah
+     * 
+     * @param tanggalDaftar tanggal saat member mendaftar
+     * @throws IllegalArgumentException jika tanggal kosong atau format salah
+     */
     public void setTanggalDaftar(String tanggalDaftar) {
-        if (tanggalDaftar == null || tanggalDaftar.trim().isEmpty()) {
+        validateTanggal(tanggalDaftar);
+        this.tanggalDaftar = parseDanFormatTanggal(tanggalDaftar);
+    }
+
+    /**
+     * Method helper untuk memeriksa apakah input tanggal kosong atau null.
+     */
+    private void validateTanggal(String tanggal) {
+        if (tanggal == null || tanggal.trim().isEmpty()) {
             throw new IllegalArgumentException("Tanggal daftar tidak boleh kosong!");
         }
-        
-        try {
+    }
+
+    /**
+     * Method Helper khusus untuk melakukan parsing string ke format
+     * tanggal yang valid.
+     */
+    private String parseDanFormatTanggal(String tanggal) {
+                try {
             // Validasi dan melakukan parsing string ke LocalDate menggunakan
             // formatter ketat
             LocalDate parseDate = LocalDate.parse(tanggalDaftar.trim(), FORMATTER);
