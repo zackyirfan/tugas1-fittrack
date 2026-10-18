@@ -93,6 +93,14 @@ public class Member{
         this.nama = nama;
     }
 
+    /**
+     * Mengatur nomor telepon member dengan validasi,
+     * agar diawali angka 0 dan minimal 10 digit
+     * 
+     * @param noTelepon nomor telepon member
+     * @throws IllegalArgumentException jika nama bernilai null, kurang dari 10 digit,
+     * atau tidak diawali angka nol
+     */
     public void setNoTelepon(String noTelepon) {
         // Aturan: nomor telepon tidak boleh lebih dari sepuluh digit
         // dan diawali angka nol
