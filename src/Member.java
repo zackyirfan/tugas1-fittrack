@@ -33,10 +33,10 @@ public class Member{
      * @param jenisPaket jenis paket langganan member
      */
     public Member(String nama, String noTelepon, String tanggalDaftar, String jenisPaket) {
-        this.nama = nama;
-        this.noTelepon = noTelepon;
-        this.tanggalDaftar = tanggalDaftar;
-        this.jenisPaket = jenisPaket;
+        setNama(nama);
+        setNoTelepon(noTelepon);
+        setTanggalDaftar(tanggal);
+
     }
 
 
@@ -93,7 +93,7 @@ public class Member{
     }
 
 
-    // --- SETTER DENGAN VALIDASI --
+    //      --- SETTER DENGAN VALIDASI --
 
     /**
      * Mengatur nama lengkap member dengan melakukan validasi 
@@ -169,4 +169,10 @@ public class Member{
         }
     }
 
+    public void setJenisPaket(String jenisPaket) {
+        if (jenisPaket == null || jenisPaket.trim().isEmpty()) {
+            throw new IllegalArgumentException("Jenis paket tidak boleh kosong!");
+        }
+        this.jenisPaket = jenisPaket.trim();
+    }
 }
