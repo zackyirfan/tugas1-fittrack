@@ -54,7 +54,7 @@ public class Member{
     }
 
 
-    // --- GETTER ---
+    //      --- GETTER ---
     
     /**
      * Mengembalikan nilai nama member
@@ -153,11 +153,11 @@ public class Member{
      * tanggal yang valid.
      */
     private String parseDanFormatTanggal(String tanggal) {
-                try {
+            try {
             // Validasi dan melakukan parsing string ke LocalDate menggunakan
             // formatter ketat
-            LocalDate parseDate = LocalDate.parse(tanggalDaftar.trim(), FORMATTER);
-            this.tanggalDaftar = parseDate.toString(); // disimpan kembali ke bentuk string standar
+            LocalDate parseDate = LocalDate.parse(tanggal.trim(), FORMATTER);
+            return parseDate.toString(); // disimpan kembali ke bentuk string standar
         } catch (DateTimeParseException e) {
             throw new IllegalArgumentException("Format tanggal harus persis: dd-MM-yyyy");
         }
