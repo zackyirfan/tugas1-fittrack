@@ -1,3 +1,8 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
+
 /**
  * Kelas ini merepresentasikan data seorang member dalam sistem.
  * 
@@ -12,8 +17,12 @@ public class Member{
     private String tanggalDaftar;
     private String jenisPaket;
 
-    // Constructor 1
+    // Formatter tanggal dengan pola ketat "dd-MM-yyyy"
+    public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+            .withResolverStyle(ResolverStyle.STRICT);
 
+
+    // Constructor 1
     /**
      * Method constructor untuk membuat objek
      * dari kelas member
@@ -30,8 +39,8 @@ public class Member{
         this.jenisPaket = jenisPaket;
     }
 
-    // Constructor 2 (Default paket "Basic")
 
+    // Constructor 2 (Default paket "Basic")
     /**
      * Method constructor untuk membuat objek dari kelas member
      * dengan jenis paket default "Basic"
@@ -119,11 +128,20 @@ public class Member{
         this.noTelepon = noTelepon;
     }
 
+
     public void setTanggalDaftar(String tanggalDaftar) {
-        if (tanggalDaftar == null || tanggalDaftar.trim.isEmpty()) {
+        if (tanggalDaftar == null || tanggalDaftar.trim().isEmpty()) {
             throw new IllegalArgumentException("Tanggal daftar tidak boleh kosong!");
         }
-        this.jenisPaket = jenisPaket;
+        
+        try {
+            // Validasi dan melakukan parsing string ke LocalDate menggunakan
+            // formatter ketat
+            LocalDate parseDate = LocalDate.parse(tanggalDaftar.trim(), FORMATTER);
+            this.tanggalDaftar = parseDate.toString(); // disimpan kembali ke bentuk string standar
+        } catch (DateTimeParseException e) {
+            throw new IllegalArgumentException("Format tanggal harus persis: dd-MM-yyyy");
+        }
     }
 
 }
