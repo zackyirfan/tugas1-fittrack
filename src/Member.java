@@ -36,7 +36,7 @@ public class Member{
         setNama(nama);
         setNoTelepon(noTelepon);
         setTanggalDaftar(tanggal);
-
+        setJenisPaket(jenisPaket);
     }
 
 
