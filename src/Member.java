@@ -132,7 +132,6 @@ public class Member{
      * Mengatur tanggal daftar member dengan memanggil fungsi validasi dan parsing terpisah
      * 
      * @param tanggalDaftar tanggal saat member mendaftar
-     * @throws IllegalArgumentException jika tanggal kosong atau format salah
      */
     public void setTanggalDaftar(String tanggalDaftar) {
         validateTanggal(tanggalDaftar);
@@ -141,6 +140,9 @@ public class Member{
 
     /**
      * Method helper untuk memeriksa apakah input tanggal kosong atau null.
+     * 
+     * @param tanggal tanggal daftar yang di-input
+     * @throws IllegalArgumentException jika tanggal kosong
      */
     private void validateTanggal(String tanggal) {
         if (tanggal == null || tanggal.trim().isEmpty()) {
@@ -151,6 +153,10 @@ public class Member{
     /**
      * Method Helper khusus untuk melakukan parsing string ke format
      * tanggal yang valid.
+     * 
+     * @param tanggal tanggal daftar yang di-input
+     * @return representasi string dari tanggal yang sudah diparse dan diformat
+     * @throws IllegalArgumentException jika format tanggal salah
      */
     private String parseDanFormatTanggal(String tanggal) {
             try {
