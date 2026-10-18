@@ -1,0 +1,6 @@
+# Mengabaikan file kompilasi Java
+*.class
+
+# Mengabaikan folder build IDE / Build tools
+out/
+target/
