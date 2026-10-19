@@ -159,7 +159,7 @@ public class Member{
      * @throws IllegalArgumentException jika format tanggal salah
      */
     private String parseDanFormatTanggal(String tanggal) {
-            try {
+        try {
             // Validasi dan melakukan parsing string ke LocalDate menggunakan
             // formatter ketat
             LocalDate parseDate = LocalDate.parse(tanggal.trim(), FORMATTER);
@@ -181,5 +181,19 @@ public class Member{
             throw new IllegalArgumentException("Jenis paket tidak boleh kosong!");
         }
         this.jenisPaket = jenisPaket.trim();
+    }
+
+    /**
+     * Mengembalikan representasi string dari objek Member yang berisi informasi lengkap
+     * meliputi nama, nomor telepon, tanggal daftar, dan jenis paket.
+     * 
+     * @return string representasi data member dalam format teks yang mudah dibaca
+     */
+    @Override 
+    public String toString() {
+        return "Member [Nama: " + nama +
+                ", No Telepon: " + noTelepon +
+                ", Tanggal Daftar: " + tanggalDaftar +
+                ", Jenis Paket: " + jenisPaket + "]";
     }
 }
