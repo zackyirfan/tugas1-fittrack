@@ -18,7 +18,7 @@ public class Member{
     private String jenisPaket;
 
     // Formatter tanggal dengan pola ketat "dd-MM-yyyy"
-    public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+    public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MM-uuuu")
             .withResolverStyle(ResolverStyle.STRICT);
 
 
