@@ -224,6 +224,6 @@ public class Member{
             }
         }
 
-        result result.toString().trim();
+        return result.toString().trim();
     }
 }
