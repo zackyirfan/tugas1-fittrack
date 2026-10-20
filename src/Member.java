@@ -206,4 +206,24 @@ public class Member{
                 ", Tanggal Daftar: " + tanggalDaftar +
                 ", Jenis Paket: " + jenisPaket + "]";
     }
+
+    public static String capitalizeWords(String str) {
+        if (str == null || str.trim().isEmpty()) {
+            return str;
+        }
+
+        // Memecah kalimaat berdasarkan spasi
+        String[] words = str.trim().split("\\s+");
+        StringBuilder result = new StringBuilder();
+
+        for (String word : words) {
+            if (!word.isEmpty()) {
+                // Mengubah huruf pertama jadi kapital, sisanya jadi huruf kecil
+                String capitalizeWords = character.toUpperCase(word.charAt(0)) + word.substring(1).toLowerCase();
+                result.append(capitalizeWords).append(" ");
+            }
+        }
+
+        result result.toString().trim();
+    }
 }
