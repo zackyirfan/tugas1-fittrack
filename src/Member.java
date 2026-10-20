@@ -180,7 +180,17 @@ public class Member{
         if (jenisPaket == null || jenisPaket.trim().isEmpty()) {
             throw new IllegalArgumentException("Jenis paket tidak boleh kosong!");
         }
-        this.jenisPaket = jenisPaket.trim();
+
+        String input = jenisPaket.trim();
+
+        // Validasi apakah input sesuai dengan pilihan yang diizinkan
+        if (!input.equalIgnoreCase("Basic") &&
+            !input.equalIgnoreCase("Premium") &&
+            !input.equalIgnoreCase("VIP")) {
+                throw new IllegalArgumentException("Jenis paket harus berupa: Basic, Premium, atau VIP");
+            }
+
+        this.jenisPaket = input;
     }
 
     /**
