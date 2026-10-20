@@ -184,9 +184,9 @@ public class Member{
         String input = jenisPaket.trim();
 
         // Validasi apakah input sesuai dengan pilihan yang diizinkan
-        if (!input.equalIgnoreCase("Basic") &&
-            !input.equalIgnoreCase("Premium") &&
-            !input.equalIgnoreCase("VIP")) {
+        if (!input.equalsIgnoreCase("Basic") &&
+            !input.equalsIgnoreCase("Premium") &&
+            !input.equalsIgnoreCase("VIP")) {
                 throw new IllegalArgumentException("Jenis paket harus berupa: Basic, Premium, atau VIP");
             }
 
