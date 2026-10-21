@@ -228,6 +228,6 @@ public class Member{
             }
         }
 
-        return result.toString().trim()
+        return result.toString().trim();
     }
 }
