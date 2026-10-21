@@ -108,7 +108,7 @@ public class Member{
         if (nama == null || nama.trim().isEmpty()) {
             throw new IllegalArgumentException("Nama tidak boleh kosong atau hanya berisi spasi!");
         }
-        this.nama = nama;
+        this.nama = capitalizeWords(nama);
     }
 
     /**
@@ -187,10 +187,14 @@ public class Member{
         if (!input.equalsIgnoreCase("Basic") &&
             !input.equalsIgnoreCase("Premium") &&
             !input.equalsIgnoreCase("VIP")) {
-                throw new IllegalArgumentException("Jenis paket harus berupa: Basic, Premium, atau VIP");
+            throw new IllegalArgumentException("Jenis paket harus berupa: Basic, Premium, atau VIP");
             }
-
-        this.jenisPaket = input;
+        
+        if (input.equalsIgnoreCase("VIP")) {
+            this.jenisPaket = "VIP";
+        } else {
+            this.jenisPaket = Character.toUpperCase(input.charAt(0)) + input.substring(1).toLowerCase();
+        }
     }
 
     /**
@@ -202,9 +206,9 @@ public class Member{
     @Override 
     public String toString() {
         return "Member [Nama: " + nama +
-                ", No Telepon: " + noTelepon +
-                ", Tanggal Daftar: " + tanggalDaftar +
-                ", Jenis Paket: " + jenisPaket + "]";
+                " | No Telepon: " + noTelepon +
+                " | Tanggal Daftar: " + tanggalDaftar +
+                " | Jenis Paket: " + jenisPaket + "]";
     }
 
     public static String capitalizeWords(String str) {
@@ -219,7 +223,7 @@ public class Member{
         for (String word : words) {
             if (!word.isEmpty()) {
                 // Mengubah huruf pertama jadi kapital, sisanya jadi huruf kecil
-                String capitalizeWords = character.toUpperCase(word.charAt(0)) + word.substring(1).toLowerCase();
+                String capitalizeWords = Character.toUpperCase(word.charAt(0)) + word.substring(1).toLowerCase();
                 result.append(capitalizeWords).append(" ");
             }
         }
