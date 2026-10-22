@@ -59,4 +59,4 @@ tugas1-fittrack/
 1. Clone Repository ini:
     ```bash
     git clone [https://github.com/zackyirfan/tugas1-fittrack.git](https://github.com/zackyirfan/tugas1-fittrack.git)
-    cd tugas1-fittrack/src```
+    cd tugas1-fittrack/src
