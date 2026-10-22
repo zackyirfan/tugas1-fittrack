@@ -33,16 +33,15 @@ Sistem pendataan member berbasis Java console untuk gym FitTrack. Aplikasi ini m
 ---
 
 ## Struktur Projek
-```text
-tugas1-fittrack/
-├── .github/
-│   └── workflows/
-│       └── ci.yml          # Konfigurasi GitHub Actions untuk kompilasi otomatis
-├── src/
-│   ├── Member.java         # Class entitas, validasi atribut, dan Javadoc
-│   └── TesFitTrack.java    # Class main untuk eksekusi skenario uji
-├── .gitignore              # Pengecualian file kompilasi .class dan folder IDE
-└── README.md               # Dokumentasi utama proyek
+```
+├── 📁 .github
+│   └── 📁 workflows
+│       └── ⚙️ ci.yml
+├── 📁 src
+│   ├── ☕ Member.java
+│   └── ☕ TesFitTrack.java
+├── ⚙️ .gitignore
+└── 📝 README.md
 ```
 
 ---
