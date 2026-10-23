@@ -17,26 +17,25 @@ public class TesFitTrack {
      */
     public static void main(String[] args) {
         // Membuat array bertipe Member(class) dengan kapasitas 4 elemen
-        Member[] daftarMember = new Member[4];
+        Member[] listMember = {
+            new Member("Alex", "081234567890", "12-01-2026", "vip")
+        };
 
-        daftarMember[0] = new Member("Fathir", "081234567890", "12-01-2026", "VIP");
-        daftarMember[1] = new Member("Rehan", "089876543210", "10-12-2026", "Premium");
-        daftarMember[2] = new Member("Teddy", "081122334455", "06-02-2025", "Basic");
-        daftarMember[3] = new Member("Joko", "085544332211", "25-04-2026"); // Constructor tanpa paket (default Basic)
+        String border = "+----+----------------------+---------------+----------------+-------------+";
+        System.out.println(border);
+        System.out.printf("| %-2s | %-20s | %-13s | %-14s | %-11s |\n",
+                          "No", "Nama Member", "No Telepon", "Tanggal Daftar", "Jenis Paket");
+        System.out.println(border);
 
-        System.out.println("--- Menguji Setter dengan Data yang Salah ---");
-        try {
-            daftarMember[0].setNoTelepon("12345");
-        } catch (IllegalArgumentException e) {
-            System.out.println("Penolakan Validasi: " + e.getMessage());
+        for (int i = 0; i < listMember.length; i++) {
+            System.out.printf("| %-2d | %-20s | %-13s | %-14s | %-11s |\n",
+                              (i + 1),
+                              listMember[i].getNama(),
+                              listMember[i].getNoTelepon(),
+                              listMember[i].getTanggalDaftar(),
+                              listMember[i].getJenisPaket());
         }
 
-        System.out.println("Nomor telepon setelah di-set salah: " + daftarMember[0].getNoTelepon());
-
-        System.out.println("--- Daftar Seluruh Member FitTrack ---");
-        for (int i = 0; i < daftarMember.length; i++) {
-            // Memanggil toString() secara otomatis
-            System.out.println((i + 1) + ". " + daftarMember[i]);
-        }
+        System.out.println(border);
     }
 }
