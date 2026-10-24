@@ -18,7 +18,8 @@ public class TesFitTrack {
     public static void main(String[] args) {
         // Membuat array bertipe Member(class) dengan kapasitas 4 elemen
         Member[] listMember = {
-            new Member("Alex", "081234567890", "12-01-2026", "vip")
+            new Member("Alex", "081234567890", "12-01-2026", "vip"),
+            new Member("bagus", "082310859293", "4-2-2024", "basic")
         };
 
         String border = "+----+----------------------+---------------+----------------+-------------+";
