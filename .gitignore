@@ -4,3 +4,6 @@
 # Mengabaikan folder build IDE / Build tools
 out/
 target/
+*.idea/
+*.iml
+*.xml
