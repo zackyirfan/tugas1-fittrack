@@ -195,7 +195,7 @@ public class Member{
             // Validasi dan melakukan parsing string ke LocalDate menggunakan
             // formatter ketat
             LocalDate parseDate = LocalDate.parse(tanggal.trim(), FORMATTER);
-            return parseDate.toString(); // disimpan kembali ke bentuk string standar
+            return parseDate.format(FORMATTER); // disimpan kembali ke bentuk string standar
         } catch (DateTimeParseException e) {
             throw new IllegalArgumentException("Format tanggal harus persis: dd-MM-yyyy");
         }
