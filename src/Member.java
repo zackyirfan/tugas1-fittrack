@@ -105,10 +105,18 @@ public class Member{
      */
     public void setNama(String nama) {
         // Aturan: Nama tidak boleh kosong atau hanya berisi spasi
-        if (nama == null || nama.trim().isEmpty()) {
-            throw new IllegalArgumentException("Nama tidak boleh kosong atau hanya berisi spasi!");
+        try {
+            if (nama == null || nama.trim().isEmpty()) {
+                throw new IllegalArgumentException("Nama tidak boleh kosong atau hanya berisi spasi!");
+            }
+            this.nama = capitalizeWords(nama);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Penolakan Validasi: " + e.getMessage());
+
+            if (this.nama == null) {
+                this.nama = "Unknown Member";
+            }
         }
-        this.nama = capitalizeWords(nama);
     }
 
     /**
@@ -122,10 +130,18 @@ public class Member{
     public void setNoTelepon(String noTelepon) {
         // Aturan: nomor telepon tidak boleh lebih dari sepuluh digit
         // dan diawali angka nol
-        if (noTelepon == null || !noTelepon.matches("^0\\d{9,}$")) { //menggunakan Regular Expression untuk constraint
-            throw new IllegalArgumentException("Nomor telepon harus diawali angka 0 dan minimal 10 digit");
+        try {
+            if (noTelepon == null || !noTelepon.matches("^0\\d{9,}$")) {
+                throw new IllegalArgumentException("Nomor telepon harus diawali angka 0 dan minimal 10 digit");
+            }
+            this.noTelepon = noTelepon;
+        } catch (IllegalArgumentException e) {
+            System.out.println("Penolakan Validasi: " + e.getMessage());
+
+            if (this.noTelepon == null) {
+                this.noTelepon = "000000000000";
+            }
         }
-        this.noTelepon = noTelepon;
     }
 
     /**
@@ -134,8 +150,16 @@ public class Member{
      * @param tanggalDaftar tanggal saat member mendaftar
      */
     public void setTanggalDaftar(String tanggalDaftar) {
-        validateTanggal(tanggalDaftar);
-        this.tanggalDaftar = parseDanFormatTanggal(tanggalDaftar);
+        try {
+            validateTanggal(tanggalDaftar);
+            this.tanggalDaftar = parseDanFormatTanggal(tanggalDaftar);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Penolakan Validasi: " + e.getMessage());
+
+            if (this.tanggalDaftar == null) {
+                this.tanggalDaftar = "2026-01-01";
+            }
+        }
     }
 
     /**
@@ -177,23 +201,31 @@ public class Member{
      * @throws IllegalArgumentException jika jenis paket kosong atau null
      */
     public void setJenisPaket(String jenisPaket) {
-        if (jenisPaket == null || jenisPaket.trim().isEmpty()) {
-            throw new IllegalArgumentException("Jenis paket tidak boleh kosong!");
-        }
-
-        String input = jenisPaket.trim();
-
-        // Validasi apakah input sesuai dengan pilihan yang diizinkan
-        if (!input.equalsIgnoreCase("Basic") &&
-            !input.equalsIgnoreCase("Premium") &&
-            !input.equalsIgnoreCase("VIP")) {
-            throw new IllegalArgumentException("Jenis paket harus berupa: Basic, Premium, atau VIP");
+        try {
+            if (jenisPaket == null || jenisPaket.trim().isEmpty()) {
+                throw new IllegalArgumentException("Jenis paket tidak boleh kosong!");
             }
-        
-        if (input.equalsIgnoreCase("VIP")) {
-            this.jenisPaket = "VIP";
-        } else {
-            this.jenisPaket = Character.toUpperCase(input.charAt(0)) + input.substring(1).toLowerCase();
+
+            String input = jenisPaket.trim();
+
+            // Validasi apakah input sesuai dengan pilihan yang diizinkan
+            if (!input.equalsIgnoreCase("Basic") &&
+                !input.equalsIgnoreCase("Premium") &&
+                !input.equalsIgnoreCase("VIP")) {
+                throw new IllegalArgumentException("Jenis paket harus berupa: Basic, Premium, atau VIP");
+                }
+            
+            if (input.equalsIgnoreCase("VIP")) {
+                this.jenisPaket = "VIP";
+            } else {
+                this.jenisPaket = Character.toUpperCase(input.charAt(0)) + input.substring(1).toLowerCase();
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println("Penolakan Validasi: " + e.getMessage());
+
+            if (this.jenisPaket == null) {
+                this.jenisPaket = "Basic";
+            }
         }
     }
 
