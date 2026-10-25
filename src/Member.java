@@ -53,6 +53,14 @@ public class Member{
         this(nama, noTelepon, tanggalDaftar, "Basic");
     }
 
+    /**
+     * Method Constructor tanpa parameter 
+     * untuk assign nilai default
+     */
+    public Member() {
+        this("Unknown Member", "000000000000", "01-01-2026", "Basic");
+    }
+
 
     //      --- GETTER ---
     
@@ -157,7 +165,7 @@ public class Member{
             System.out.println("Penolakan Validasi: " + e.getMessage());
 
             if (this.tanggalDaftar == null) {
-                this.tanggalDaftar = "2026-01-01";
+                this.tanggalDaftar = "01-01-2006";
             }
         }
     }
