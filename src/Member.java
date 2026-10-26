@@ -5,13 +5,13 @@ import java.time.format.ResolverStyle;
 
 /**
  * Kelas ini merepresentasikan data seorang member dalam sistem.
- * 
+ *
  * @author Arienal Zacky Irfan
  * @version 1.0
  * @since 2026
  */
 
-public class Member{
+public class Member {
     private String nama;
     private String noTelepon;
     private String tanggalDaftar;
@@ -23,14 +23,15 @@ public class Member{
 
 
     // Constructor 1
+
     /**
      * Method constructor untuk membuat objek
      * dari kelas member
-     * 
-     * @param nama nama lengkap member
-     * @param noTelepon nomor telepon member
-     * @param tanggalDaftar tanggal saat member mendaftar 
-     * @param jenisPaket jenis paket langganan member
+     *
+     * @param nama          nama lengkap member
+     * @param noTelepon     nomor telepon member
+     * @param tanggalDaftar tanggal saat member mendaftar
+     * @param jenisPaket    jenis paket langganan member
      */
     public Member(String nama, String noTelepon, String tanggalDaftar, String jenisPaket) {
         setNama(nama);
@@ -41,12 +42,13 @@ public class Member{
 
 
     // Constructor 2 (Default paket "Basic")
+
     /**
      * Method constructor untuk membuat objek dari kelas member
      * dengan jenis paket default "Basic"
-     * 
-     * @param nama nama lengkap member
-     * @param noTelepon nomor telepon member
+     *
+     * @param nama          nama lengkap member
+     * @param noTelepon     nomor telepon member
      * @param tanggalDaftar tanggal saat member mendaftar
      */
     public Member(String nama, String noTelepon, String tanggalDaftar) {
@@ -54,7 +56,7 @@ public class Member{
     }
 
     /**
-     * Method Constructor tanpa parameter 
+     * Method Constructor tanpa parameter
      * untuk assign nilai default
      */
     public Member() {
@@ -63,11 +65,11 @@ public class Member{
 
 
     //      --- GETTER ---
-    
+
     /**
      * Mengembalikan nilai nama member
-     * 
-     * @return nilai dari aribut nama 
+     *
+     * @return nilai dari aribut nama
      */
     public String getNama() {
         return this.nama;
@@ -75,7 +77,7 @@ public class Member{
 
     /**
      * Mengembalikan nilai no Telepon member
-     * 
+     *
      * @return nilai dari atribut noTelepon;
      */
     public String getNoTelepon() {
@@ -84,7 +86,7 @@ public class Member{
 
     /**
      * Mengembalikan nilai Tanggal daftar member
-     * 
+     *
      * @return nilai dari atribut tanggalDaftar
      */
     public String getTanggalDaftar() {
@@ -93,7 +95,7 @@ public class Member{
 
     /**
      * Mengembalikan nilai jenis paket member
-     * 
+     *
      * @return nilai dari atribut jenisPaket
      */
     public String getJenisPaket() {
@@ -104,12 +106,12 @@ public class Member{
     //      --- SETTER DENGAN VALIDASI --
 
     /**
-     * Mengatur nama lengkap member dengan melakukan validasi 
+     * Mengatur nama lengkap member dengan melakukan validasi
      * agar tidak boleh kosong atau hanya berisi spasi
-     * 
+     *
      * @param nama nama lengkap member yang akan di-set
      * @throws IllegalArgumentException jika nama bernilai null, kosong,
-     * atau hanya berisi spasi  
+     *                                  atau hanya berisi spasi
      */
     public void setNama(String nama) {
         // Aturan: Nama tidak boleh kosong atau hanya berisi spasi
@@ -130,10 +132,10 @@ public class Member{
     /**
      * Mengatur nomor telepon member dengan validasi,
      * agar diawali angka 0 dan minimal 10 digit
-     * 
+     *
      * @param noTelepon nomor telepon member
      * @throws IllegalArgumentException jika nama bernilai null, kurang dari 10 digit,
-     * atau tidak diawali angka nol
+     *                                  atau tidak diawali angka nol
      */
     public void setNoTelepon(String noTelepon) {
         // Aturan: nomor telepon tidak boleh lebih dari sepuluh digit
@@ -154,7 +156,7 @@ public class Member{
 
     /**
      * Mengatur tanggal daftar member dengan memanggil fungsi validasi dan parsing terpisah
-     * 
+     *
      * @param tanggalDaftar tanggal saat member mendaftar
      */
     public void setTanggalDaftar(String tanggalDaftar) {
@@ -172,7 +174,7 @@ public class Member{
 
     /**
      * Method helper untuk memeriksa apakah input tanggal kosong atau null.
-     * 
+     *
      * @param tanggal tanggal daftar yang di-input
      * @throws IllegalArgumentException jika tanggal kosong
      */
@@ -185,7 +187,7 @@ public class Member{
     /**
      * Method Helper khusus untuk melakukan parsing string ke format
      * tanggal yang valid.
-     * 
+     *
      * @param tanggal tanggal daftar yang di-input
      * @return representasi string dari tanggal yang sudah diparse dan diformat
      * @throws IllegalArgumentException jika format tanggal salah
@@ -202,9 +204,9 @@ public class Member{
     }
 
     /**
-     * Mengatur jenis paket yang dipilih member 
+     * Mengatur jenis paket yang dipilih member
      * agar tidak null dan kosong
-     * 
+     *
      * @param jenisPaket jenis paket yang dipilih member
      * @throws IllegalArgumentException jika jenis paket kosong atau null
      */
@@ -218,11 +220,11 @@ public class Member{
 
             // Validasi apakah input sesuai dengan pilihan yang diizinkan
             if (!input.equalsIgnoreCase("Basic") &&
-                !input.equalsIgnoreCase("Premium") &&
-                !input.equalsIgnoreCase("VIP")) {
+                    !input.equalsIgnoreCase("Premium") &&
+                    !input.equalsIgnoreCase("VIP")) {
                 throw new IllegalArgumentException("Jenis paket harus berupa: Basic, Premium, atau VIP");
-                }
-            
+            }
+
             if (input.equalsIgnoreCase("VIP")) {
                 this.jenisPaket = "VIP";
             } else {
@@ -240,10 +242,10 @@ public class Member{
     /**
      * Mengembalikan representasi string dari objek Member yang berisi informasi lengkap
      * meliputi nama, nomor telepon, tanggal daftar, dan jenis paket.
-     * 
+     *
      * @return string representasi data member dalam format teks yang mudah dibaca
      */
-    @Override 
+    @Override
     public String toString() {
         return "Member [Nama: " + nama +
                 " | No Telepon: " + noTelepon +
