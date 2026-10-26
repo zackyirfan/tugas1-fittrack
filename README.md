@@ -54,8 +54,39 @@ Sistem pendataan member berbasis Java console untuk gym FitTrack. Aplikasi ini m
 
 ## Cara Menjalankan Program
 
-### Melalui Command Line (Terminal)
+### 1. Melalui Command Line (Terminal)
 1. Clone Repository ini:
     ```bash
     git clone [https://github.com/zackyirfan/tugas1-fittrack.git](https://github.com/zackyirfan/tugas1-fittrack.git)
     cd tugas1-fittrack/src
+2. Kompilasi program Java:
+    ```bash
+    javac *.java
+3. Jalankan program:
+    ```bash
+    java TestFitTrack
+### 2. Melalui IntelliJ IDEA
+1. Buka aplikasi IntelliJ IDEA.
+2. Pilih **Open** lalu arahkan ke folder proyek `tugas1-fittrack`.
+3. Pastikan project SDK sudah diatur ke **Java 21**.
+4. Buka file `src/TesFitTrack.java`.
+5. Klik ikon **Run** (segitiga hijau) di sebelah method `main` atau tekan `Shift + 10`.
+
+---
+
+## Contoh Output (keluaran)
+1. **Skenario normal (Tidak ada kesalahan input)**
+![Tampilan Output Terminal FIttrack](assets/OutputBenarSemua.png)
+
+2. **Skenario anomali (Saat ada kesalahan input)**
+![Tampilan Output Teminal Fittrack](assets/OutputJikaInputSalah.png)
+
+---
+
+## Nilai default
+| Atribut | Kriteria Validasi | Nilai Default |
+|---|---|---|
+| **Nama Member** | Tidak boleh `null`, kosong, atau hanya berisi spasi | `"Unknown Member"` |
+| **No Telepon** | Wajib diawali angka `0` dan minimal 10 digit | `"000000000000"` |
+| **Tanggal Daftar** | Wajib berformat ketat `dd-MM-yyyy` | `01-01-2026` |
+| **Jenis Paket** | Hanya menerima paket: `Basic`, `Premium`, atau `VIP` | `Basic` |
