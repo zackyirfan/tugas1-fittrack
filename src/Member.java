@@ -12,10 +12,17 @@ import java.time.format.ResolverStyle;
  */
 
 public class Member {
+    // Atribut Privatecd
     private String nama;
     private String noTelepon;
     private String tanggalDaftar;
     private String jenisPaket;
+
+    // Konstanta (Magic String & Regex ditaruh di sini)
+    public static final String DEFAULT_NAMA = "Unknown Member";
+    public static final String DEFAULT_NO_TELEPON = "000000000000";
+    public static final String DEFAULT_TANGGAL_DAFTAR = "01-01-2026";
+    public static final String DEFAULT_JENIS_PAKET = "Basic";
 
     // Formatter tanggal dengan pola ketat "dd-MM-yyyy"
     public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MM-uuuu")
