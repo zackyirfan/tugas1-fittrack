@@ -12,7 +12,7 @@ import java.time.format.ResolverStyle;
  */
 
 public class Member {
-    // Atribut Privatecd
+    // Atribut Private
     private String nama;
     private String noTelepon;
     private String tanggalDaftar;
@@ -23,6 +23,7 @@ public class Member {
     public static final String DEFAULT_NO_TELEPON = "000000000000";
     public static final String DEFAULT_TANGGAL_DAFTAR = "01-01-2026";
     public static final String DEFAULT_JENIS_PAKET = "Basic";
+    public static final String PHONE_REGEX = "^0\\d{9,}$";
 
     // Formatter tanggal dengan pola ketat "dd-MM-yyyy"
     public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MM-uuuu")
