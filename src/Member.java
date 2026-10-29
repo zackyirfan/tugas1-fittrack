@@ -132,7 +132,7 @@ public class Member {
             System.out.println("Penolakan Validasi: " + e.getMessage());
 
             if (this.nama == null) {
-                this.nama = "Unknown Member";
+                this.nama = DEFAULT_NAMA;
             }
         }
     }
@@ -149,7 +149,7 @@ public class Member {
         // Aturan: nomor telepon tidak boleh lebih dari sepuluh digit
         // dan diawali angka nol
         try {
-            if (noTelepon == null || !noTelepon.matches("^0\\d{9,}$")) {
+            if (noTelepon == null || !noTelepon.matches(PHONE_REGEX)) {
                 throw new IllegalArgumentException("Nomor telepon harus diawali angka 0 dan minimal 10 digit");
             }
             this.noTelepon = noTelepon;
@@ -157,7 +157,7 @@ public class Member {
             System.out.println("Penolakan Validasi: " + e.getMessage());
 
             if (this.noTelepon == null) {
-                this.noTelepon = "000000000000";
+                this.noTelepon = DEFAULT_NO_TELEPON;
             }
         }
     }
@@ -175,7 +175,7 @@ public class Member {
             System.out.println("Penolakan Validasi: " + e.getMessage());
 
             if (this.tanggalDaftar == null) {
-                this.tanggalDaftar = "01-01-2006";
+                this.tanggalDaftar = DEFAULT_TANGGAL_DAFTAR;
             }
         }
     }
@@ -242,7 +242,7 @@ public class Member {
             System.out.println("Penolakan Validasi: " + e.getMessage());
 
             if (this.jenisPaket == null) {
-                this.jenisPaket = "Basic";
+                this.jenisPaket = DEFAULT_JENIS_PAKET;
             }
         }
     }
