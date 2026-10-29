@@ -68,7 +68,7 @@ public class Member {
      * untuk assign nilai default
      */
     public Member() {
-        this("Unknown Member", "000000000000", "01-01-2026", "Basic");
+        this(DEFAULT_NAMA, DEFAULT_NO_TELEPON, DEFAULT_TANGGAL_DAFTAR, DEFAULT_JENIS_PAKET);
     }
 
 
