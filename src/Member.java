@@ -71,6 +71,17 @@ public class Member {
         this(DEFAULT_NAMA, DEFAULT_NO_TELEPON, DEFAULT_TANGGAL_DAFTAR, DEFAULT_JENIS_PAKET);
     }
 
+    /**
+     * Memeriksa apakah terdapat atribut member yang maasih menggunakan nilai default
+     * 
+     * @return true jika setidaknya ada satu atribut yang memakai nilai default
+     */
+    public boolean hasDefaultValues() {
+        return DEFAULT_NAMA.equals(this.nama) ||
+        DEFAULT_NO_TELEPON.equals(this.noTelepon) ||
+        DEFAULT_TANGGAL_DAFTAR.equals(this.tanggalDaftar) ||
+        DEFAULT_JENIS_PAKET.equals(this.jenisPaket);
+    }
 
     //      --- GETTER ---
 
